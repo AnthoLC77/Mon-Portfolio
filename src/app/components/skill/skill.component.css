@@ -1,0 +1,11 @@
+.language {
+    margin-bottom: 7px;
+    
+}
+
+.linearGradient {
+    background: linear-gradient(to left, #61b0ff, #9EB1FF, #61b0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

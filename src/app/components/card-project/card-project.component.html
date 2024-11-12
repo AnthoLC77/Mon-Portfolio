@@ -1,0 +1,42 @@
+<swiper-container
+  swiperEx
+  [slidesPerView]="3"
+  [spaceBetween]="10"
+  [watchOverflow]="true"
+  (reachEnd)="onReachEnd()"
+  (fromEdge)="onFromEdge()"
+  class="w-full max-w-full">
+  <ng-container  *ngFor="let project of projects; let i = index">
+      <swiper-slide appSlideInAnimate class="rounded-t-lg opacity-0" [ngClass]="'delay-'+i" >
+        <div class="card bg-base-100 w-full rounded-t-lg cursor-pointer" (click)="openProject(project.lien)">
+          <figure>
+            <img class="max-h-52 h-52 object-cover w-full"
+              src="{{project.image}}"
+              alt="image project" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title items-baseline whitespace-nowrap">
+              {{project.title}}
+              <div class="badge truncate max-w-18 inline-block" [ngClass]="{'badge-secondary': project.badge === 'Work in progress', 'bg-green-600': project.badge !== 'Work in progress'}">
+                {{project.badge}}
+              </div>
+            </h2>
+            <p class="text-left">{{project.description}}</p>
+            <div class="card-actions justify-end flex-nowrap">
+              <div *ngFor="let techno of project.technologies" class="badge badge-outline dark:bg-indigo-4 dark:border-indigo-4 p-3 font-bold whitespace-nowrap">
+                <i *ngIf="techno === 'HTML'" class="fab fa-html5 mr-1"></i>
+                <i *ngIf="techno === 'CSS'" class="fab fa-css3 mr-1"></i>
+                <i *ngIf="techno === 'JavaScript'" class="fab fa-js mr-1"></i>
+                <i *ngIf="techno === 'Angular'" class="fab fa-angular mr-1"></i>
+                <i *ngIf="techno === 'Spring Boot'" class="fas fa-cogs mr-1"></i>
+                <i *ngIf="techno === 'Ionic'" class="fas fa-mobile-alt mr-1"></i>
+                {{techno}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+  </ng-container>
+</swiper-container>
+<div class="swiper-indicator flex justify-end" [class.stop-animation]="isEnd">Swipe →</div>
+

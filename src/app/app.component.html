@@ -1,0 +1,47 @@
+<div class="main-container flex flex-col items-center">
+  <div class="navbar bg-base-100 text-black dark:text-white">
+    <div class="navbar-start">
+      <div class="avatar flex items-center">
+        <div class="ring-primary ring-offset-base-100 w-12 rounded-full ring ring-offset-2">
+          <img src="../assets/img/photo-de-profil.jpg" />
+        </div>
+        <p class="text-white ml-3 font-bold">Anthony Le cardonnel</p>
+      </div>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal flex items-center font-bold">
+        <li><a>Home</a></li>
+        <li><a href="#skills" >Skills</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#cursus">Cursus</a></li>
+        <span class="custom-navbar-center"></span>
+      </ul>
+    </div>
+    <div class="navbar-end">
+      <app-theme-toggle-button></app-theme-toggle-button>
+    </div>
+  </div>
+  </div>
+  <div class="flex flex-col justify-center items-center w-full">
+
+
+  <app-my-introduction class="w-10/12"></app-my-introduction>
+
+  <div id="skills" class="flex flex-col justify-center items-center mb-28 w-10/12">
+    <h2 appSlideInAnimate class="text-black dark:text-white mb-8 text-3xl font-bold slide-in-skill opacity-0"><span class="dark:text-indigo-dark-text text-3xl">S</span>kills</h2>
+    <app-skill class="w-full flex justify-around"></app-skill>
+  </div>
+
+  <div id="project" class="flex flex-col justify-center items-center w-10/12 mb-10">
+    <h2 appSlideInAnimate  class="text-black dark:text-white mb-8 text-3xl font-bold slide-in-skill opacity-0 "><span class="dark:text-indigo-dark-text text-3xl">P</span>roject</h2>
+    <app-card-project class="max-w-full"></app-card-project>
+  </div>
+
+  <div id="cursus" class="flex flex-col justify-center items-center w-10/12">
+    <h2 class="text-black dark:text-white mb-8 text-3xl font-bold"><span class="dark:text-indigo-dark-text text-3xl ">C</span>ursus</h2>
+    <app-timeline></app-timeline>
+  </div>
+</div>
+
+

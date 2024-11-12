@@ -1,0 +1,33 @@
+[
+  {
+    "title" : "Application Pop'Critique",
+    "image" : "../../../assets/img/filmdetail.PNG",
+    "description" : "Application for reviewing all types of media (film, comics, video games, etc.).",
+    "technologies" : ["Angular", "Ionic", "Spring Boot"],
+    "badge" : "Work in progress"
+  },
+  {
+    "title" : "FishEye",
+    "image" : "../../../assets/img/FishEye.PNG",
+    "description" : "Application for reviewing all types of media (film, comics, video games, etc.).",
+    "technologies" : ["JavaScript", "HTML", "CSS"],
+    "badge" : "Finished",
+    "lien" : "https://antholc77.github.io/AnthonyLecardonnel_6_10082021"
+  },
+  {
+    "title" : "Les petits Plats",
+    "image" : "../../../assets/img/LesPetitsPlats.PNG",
+    "description" : "Application for reviewing all types of media (film, comics, video games, etc.).",
+    "technologies" : ["JavaScript", "HTML", "CSS"],
+    "badge" : "Finished",
+    "lien" : "https://antholc77.github.io/LecardonnelAnthony_7_10122021/"
+  },
+  {
+    "title" : "Les petits Plats",
+    "image" : "../../../assets/img/LesPetitsPlats.PNG",
+    "description" : "Application for reviewing all types of media (film, comics, video games, etc.).",
+    "technologies" : ["JavaScript", "HTML", "CSS"],
+    "badge" : "Finished"
+  }
+]
+
