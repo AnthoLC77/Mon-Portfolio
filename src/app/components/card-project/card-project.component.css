@@ -55,3 +55,41 @@ swiper-slide {
   animation-delay: 0.6s;
 }
 
+@media (max-width : 600px) {
+
+  .swiper-slide {
+    width: 100% !important; 
+    margin-right: 10px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-title {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .card-body {
+    text-align: center;
+    padding: 20px;
+  }
+
+  description-project {
+    text-align: none;
+  }
+
+  .card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .swiper-indicator {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+}
+

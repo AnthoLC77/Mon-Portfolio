@@ -1,1 +1,29 @@
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    padding: 10px;
+  }
 
+  .hero-content {
+    text-align: center;
+  }
+
+  .tooltip img {
+    max-width: 100%;
+    margin-left: 0;
+    border-width: 2px;
+  }
+
+  h1 {
+    font-size: 2rem; 
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

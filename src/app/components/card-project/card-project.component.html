@@ -2,17 +2,25 @@
   swiperEx
   [slidesPerView]="3"
   [spaceBetween]="10"
-  [watchOverflow]="true"
-  (reachEnd)="onReachEnd()"
-  (fromEdge)="onFromEdge()"
+  [pagination]="true"
+  [breakpoints]="{
+    '600': {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+    '1024': {
+      slidesPerView: 3,
+      spaceBetween: 30
+    }
+  }"
   class="w-full max-w-full">
-  <ng-container  *ngFor="let project of projects; let i = index">
+  <ng-container  *ngFor="let project of projects; let i = index" (reachEnd)="onReachEnd()">
       <swiper-slide appSlideInAnimate class="rounded-t-lg opacity-0" [ngClass]="'delay-'+i" >
         <div class="card bg-base-100 w-full rounded-t-lg cursor-pointer" (click)="openProject(project.lien)">
           <figure>
             <img class="max-h-52 h-52 object-cover w-full"
               src="{{project.image}}"
-              alt="image project" />
+              alt="image project"/>
           </figure>
           <div class="card-body">
             <h2 class="card-title items-baseline whitespace-nowrap">
@@ -21,7 +29,7 @@
                 {{project.badge}}
               </div>
             </h2>
-            <p class="text-left">{{project.description}}</p>
+            <p class="description-project text-left">{{project.description}}</p>
             <div class="card-actions justify-end flex-nowrap">
               <div *ngFor="let techno of project.technologies" class="badge badge-outline dark:bg-indigo-4 dark:border-indigo-4 p-3 font-bold whitespace-nowrap">
                 <i *ngIf="techno === 'HTML'" class="fab fa-html5 mr-1"></i>

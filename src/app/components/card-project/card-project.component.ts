@@ -4,6 +4,8 @@ import { ProjectService } from '../../services/project/project.service';
 import { CommonModule, NgFor } from '@angular/common';
 import { SlideInAnimateDirective } from '../../directives/slide-in-animate.directive';
 
+
+
 @Component({
   selector: 'app-card-project',
   standalone: true,
@@ -18,6 +20,7 @@ export class CardProjectComponent  {
 
   @ViewChild ("swiperEx") swiperEx ?: ElementRef<any>
 
+
   constructor(
     private prjService : ProjectService,
   ) {
@@ -31,13 +34,21 @@ export class CardProjectComponent  {
   }
 
   onReachEnd() {
-    this.isEnd = true
-    console.log("Reached the end: Animation should stop")
+    if(this.projects === undefined) {
+
+      this.isEnd = true
+      console.log("Reached the end: Animation should stop")
+    }
   }
 
   onFromEdge() {
     this.isEnd = false
     console.log("Left the edge: Animation should restart");
+  }
+
+  onSlideChange() {
+    console.log("test");
+
   }
 
   openProject(link: string): void {

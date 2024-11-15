@@ -3,7 +3,7 @@
     "title" : "Application Pop'Critique",
     "image" : "../../../assets/img/filmdetail.PNG",
     "description" : "Application for reviewing all types of media (film, comics, video games, etc.).",
-    "technologies" : ["Angular", "Ionic", "Spring Boot"],
+    "technologies" : ["Spring Boot", "Angular", "Ionic"],
     "badge" : "Work in progress"
   },
   {

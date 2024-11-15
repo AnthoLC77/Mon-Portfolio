@@ -1,47 +1,70 @@
 <div class="main-container flex flex-col items-center">
-  <div class="navbar bg-base-100 text-black dark:text-white">
+  <div class="navbar bg-base-100 text-black dark:text-white w-full flex justify-between items-center px-4">
     <div class="navbar-start">
-      <div class="avatar flex items-center">
+      <div class="avatar flex items-center hidden sm:flex">
         <div class="ring-primary ring-offset-base-100 w-12 rounded-full ring ring-offset-2">
           <img src="../assets/img/photo-de-profil.jpg" />
         </div>
         <p class="text-white ml-3 font-bold">Anthony Le cardonnel</p>
       </div>
+
+
+      <button id="menu-burger" class="menu-button sm:hidden" (click)="toggleMenu()">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
     </div>
 
-    <div class="navbar-center hidden lg:flex">
+
+    <div class="navbar-center hidden sm:flex">
       <ul class="menu menu-horizontal flex items-center font-bold">
-        <li><a>Home</a></li>
-        <li><a href="#skills" >Skills</a></li>
-        <li><a href="#project">Project</a></li>
-        <li><a href="#cursus">Cursus</a></li>
-        <span class="custom-navbar-center"></span>
+        <li><a routerLink="/" routerLinkActive="active-link" (click)="setCustomNavbarPosition('0px')">Home</a></li>
+        <li><a routerLink="/skills" routerLinkActive="active-link" (click)="setCustomNavbarPosition('69px')">Skills</a></li>
+        <li><a routerLink="/project" routerLinkActive="active-link" (click)="setCustomNavbarPosition('138px')">Project</a></li>
+        <li><a routerLink="/cursus" routerLinkActive="active-link" (click)="setCustomNavbarPosition('219px')">Cursus</a></li>
+        <span class="custom-navbar-center" [ngStyle]="{'left' : customNavbarPosition}"></span>
       </ul>
     </div>
+
+
     <div class="navbar-end">
       <app-theme-toggle-button></app-theme-toggle-button>
     </div>
   </div>
-  </div>
-  <div class="flex flex-col justify-center items-center w-full">
 
 
-  <app-my-introduction class="w-10/12"></app-my-introduction>
-
-  <div id="skills" class="flex flex-col justify-center items-center mb-28 w-10/12">
-    <h2 appSlideInAnimate class="text-black dark:text-white mb-8 text-3xl font-bold slide-in-skill opacity-0"><span class="dark:text-indigo-dark-text text-3xl">S</span>kills</h2>
-    <app-skill class="w-full flex justify-around"></app-skill>
-  </div>
-
-  <div id="project" class="flex flex-col justify-center items-center w-10/12 mb-10">
-    <h2 appSlideInAnimate  class="text-black dark:text-white mb-8 text-3xl font-bold slide-in-skill opacity-0 "><span class="dark:text-indigo-dark-text text-3xl">P</span>roject</h2>
-    <app-card-project class="max-w-full"></app-card-project>
-  </div>
-
-  <div id="cursus" class="flex flex-col justify-center items-center w-10/12">
-    <h2 class="text-black dark:text-white mb-8 text-3xl font-bold"><span class="dark:text-indigo-dark-text text-3xl ">C</span>ursus</h2>
-    <app-timeline></app-timeline>
+  <div class="side-menu fixed top-0 left-0 h-full bg-base-100 dark:bg-indigoBackground/[0.9] text-black dark:text-white w-3/4 max-w-sm transform -translate-x-full transition-transform duration-300 ease-in-out z-50" [ngClass]="{'translate-x-0': isMenuOpen}">
+    <button class="close-menu absolute top-4 right-4 text-xl" (click)="toggleMenu()">
+      <i class="fas fa-times"></i>
+    </button>
+    <ul class="menu flex flex-col mt-16 space-y-4 px-6">
+      <li><a
+        routerLink="/"
+        routerLinkActive="active-link"
+        (click)="toggleMenu()"
+        (click)="setCustomNavbarPosition('0px')">Home</a>
+      </li>
+      <li><a
+        routerLink="/skills"
+        routerLinkActive="active-link"
+        (click)="toggleMenu()"
+        (click)="setCustomNavbarPosition('51px')">Skills</a>
+      </li>
+      <li><a
+        routerLink="/project"
+        routerLinkActive="active-link"
+        (click)="toggleMenu()"
+        (click)="setCustomNavbarPosition('103px')">Project</a>
+      </li>
+      <li><a
+        routerLink="/cursus"
+        routerLinkActive="active-link"
+        (click)="toggleMenu()"
+        (click)="setCustomNavbarPosition('155px')">Cursus</a>
+      </li>
+      <span class="custom-navbar-mobile" [ngStyle]="{'top' : customNavbarPosition}"></span>
+    </ul>
   </div>
 </div>
 
+<router-outlet></router-outlet>
 

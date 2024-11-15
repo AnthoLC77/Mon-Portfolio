@@ -21,6 +21,10 @@ h1 {
   background-color: transparent;
 }
 
+.navbar-center a:focus, .navbar-center a:active {
+  color: #fff;
+}
+
 .custom-navbar-center {
   position: absolute;
   top: 0;
@@ -31,20 +35,46 @@ h1 {
   border-radius: 8px;
 }
 
-
-
-.navbar-center li:nth-child(1):hover ~ .custom-navbar-center {
-  left: 0;
+.side-menu {
+  border: solid 1px theme('colors.indigo-3');
 }
 
-.navbar-center li:nth-child(2):hover ~ .custom-navbar-center {
-  left: 69px;
+
+.side-menu ul {
+  position: relative;
 }
 
-.navbar-center li:nth-child(3):hover ~ .custom-navbar-center {
-  left: 138px;
+.side-menu a {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+
 }
 
-.navbar-center li:nth-child(4):hover ~ .custom-navbar-center {
-  left: 219px;
+.custom-navbar-mobile {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: #4a00ff;
+  width: 85px;
+  height: 20px;
 }
+
+
+@media (max-width: 600px) {
+  .navbar-center ul {
+    flex-direction: column; /* Empile les liens verticalement en mobile */
+    gap: 10px; /* Ajoute un espacement entre les liens */
+  }
+
+
+}
+
+@media (min-width: 601px) {
+  .navbar-center ul {
+    flex-direction: row; /* Affiche les liens horizontalement pour les écrans plus larges */
+    justify-content: center;
+  }
+}
+
+
